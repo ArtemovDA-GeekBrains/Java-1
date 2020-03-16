@@ -10,6 +10,8 @@ package ru.geekbrains.java_one.lesson_4;
 // 8 *** Продумать конструктор таким образом, чтобы при создании каждому сотруднику присваивался личный
 //       уникальный идентификационный порядковый номер
 
+import static ru.geekbrains.java_one.lesson_4.Worker.incSalary;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -40,11 +42,12 @@ public class Main {
         System.out.println("----------------------------------------");
 
         // Задание 6.
-        // Разве метод может повысить зарплату сразу ВСЕМ сотрудникам?
-        // Может быть имелось ввиду только конкретному экземпляру класса?
 
+        Worker.incSalary(arr);
+
+        // Проверка задания 6.
         for (Worker value : arr) {
-            System.out.println(value.incSalary());
+            System.out.println(value.getSalary());
         }
         System.out.println("----------------------------------------");
 

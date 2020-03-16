@@ -50,11 +50,14 @@ public class Worker {
 
     // Задание 6.
 
-    public int incSalary() {
-        if (this.getAge() >= 45) {
-            this.salary += 5000;
+    public void setSalary(int salary) { this.salary = salary; }
+
+    public static void incSalary(Worker[] workersList) {
+        for (Worker worker : workersList) {
+            if (worker.getAge() >= 45) {
+                worker.setSalary(worker.getSalary() + 5000);
+            }
         }
-        return this.salary;
     }
 
     // Задание 7.
