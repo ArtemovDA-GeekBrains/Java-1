@@ -4,7 +4,7 @@ package ru.geekbrains.java_one.lesson_4;
 public class Worker {
 
     private String surname;         //фамилия
-    private int salary;             //зарплата
+    private float salary;           //зарплата
     private int age;                //возраст (в задании четко сказано - "поле возраст", а не "дата рождения")
     private String position;        //должность
 
@@ -14,7 +14,7 @@ public class Worker {
 
     // Задание 2.
 
-    public Worker(String surname, int salary, int age, String position) {
+    public Worker(String surname, float salary, int age, String position) {
         this.surname = surname;
         this.salary = salary;
         this.age = age;
@@ -28,7 +28,7 @@ public class Worker {
         return this.surname;
     }
 
-    public int getSalary() {
+    public float getSalary() {
         return this.salary;
     }
 
@@ -45,38 +45,10 @@ public class Worker {
     }
 
     public String showFullInfo() {
-        return (surname + " " + salary + " " + age + " " + position);
+        return (getSurname() + " " + getSalary() + " " + getAge() + " " + getPosition());
     }
 
     // Задание 6.
 
-    public void setSalary(int salary) { this.salary = salary; }
-
-    public static void incSalary(Worker[] workersList) {
-        for (Worker worker : workersList) {
-            if (worker.getAge() >= 45) {
-                worker.setSalary(worker.getSalary() + 5000);
-            }
-        }
-    }
-
-    // Задание 7.
-
-    // Средний возраст
-    public static float getAverageAge(Worker[] workersList){
-        float tmp = 0.0f;
-
-        for (Worker worker : workersList) tmp += worker.getAge();
-
-        return tmp/workersList.length;
-    }
-
-    // Средняя ЗП
-    public static float getAverageSalary(Worker[] workersList){
-        float tmp = 0.0f;
-
-        for (Worker worker : workersList) tmp += worker.getSalary();
-
-        return tmp/workersList.length;
-    }
+    public void setSalary(float salary) { this.salary = salary; }
 }
